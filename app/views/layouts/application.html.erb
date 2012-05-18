@@ -3,10 +3,17 @@
 <head>
   <title><%= title %></title>
   <%= csrf_meta_tag %>  <!--предотвращение подделки межсайтовых запросов-->
-  <%= stylesheet_link_tag 'blueprint/screen', :media => 'screen' %>  <!--включает таблицы стилей на соответствующих страницах-->
-  <%= stylesheet_link_tag 'blueprint/print',  :media => 'print' %>
+  <%= render 'layouts/stylesheets' %>   <!--вставка частичного шаблона-->
 </head>
 <body>
-  <%= yield %>  <!--вставка содержимого каждой страницы в шаблон-->
+  <div class="container">
+     <header>
+       <%= render 'layouts/header' %> <!--вставка частичного шаблона-->
+     </header>
+     <section class="round">
+       <%= yield %>  <!--вставка содержимого каждой страницы в шаблон-->
+     </section>
+    <%= render 'layouts/footer' %>  <!--вставка частичного шаблона-->
+  </div>
 </body>
 </html>
