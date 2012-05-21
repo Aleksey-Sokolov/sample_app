@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe PagesController do
-  render_views
+  render_views #необходим для тестирования приложений вместе с действиями
 
   before(:each) do    #выполняет блок кода перед каждым тестом
     #
